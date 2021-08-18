@@ -1,0 +1,38 @@
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-image: url("mask-4934337_1920 (2).jpg");
+    background-color:black;
+    background-repeat: no-repeat;
+    background-size:cover; 
+    text-align: center;
+    color:White;
+}
+h1{
+    font-size: 96px;
+    color:white;
+  
+}
+#flag{
+    width:20px;
+}
+.flex{
+    display: flex;
+    margin-left:45%;
+    
+    text-align: center;
+}
+.flex2{
+
+    display: flex;
+    margin-top: -5em;
+    margin-left:30%;
+    margin-right:24%; 
+    justify-content: space-evenly;
+}
+.item{
+    padding: 3px;
+}
+.group{
+    margin-top:10%;
+}
