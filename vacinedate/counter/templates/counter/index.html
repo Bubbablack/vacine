@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="{% static '/css/style.css'%}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,17 +15,51 @@
           <h3 class="item">South Africa</h3>
           <img  class="item" id="flag" src="{% static '/css/za.svg'%}" alt="Kiwi standing on oval">
         </div>
-        <h1 id="demo"></h1>
+        
         <div class="flex2">
-          <h5>Days</h5>
-          <h5>Hours</h5>
-          <h5>Minutes</h5>
-          <h5>Secounds</h5>
+          <div>
+            <h1 id="days"></h1>
+            <h5>Days</h5>
+          </div>
+          <div>
+            <h1 id="hours"></h1>
+            <h5>Hours</h5>
+          </div>
+          <div>
+            <h1 id="minutes"></h1>
+            <h5>Minutes</h5>
+          </div>
+          <div>
+            <h1 id="secounds"></h1>
+            <h5>Secounds</h5>
+          </div>
+          
         </div>
         <h3>{{EndDate}}</h3>
-        
+        <div id="overlay" onclick="off()">
+          <div id="text">
+            <div class="info-bar">
+            <h5 style="color: rgb(0, 0, 0);">info</h5>
+            <p style="color: rgb(0, 0, 0);font-size:0.4em;">This programm counts down the time left until a country reaches heard immunity (). The data used to calculate this date is from <a href="https://ourworldindata.org/covid-vaccinations?country=ZAF">world in data</a></p></div>
+          </div>
+        </div>
+
+        <div class="flex3">
+            <button class="btn item" onclick="on()">project info</button>
+
+            <a class="btn2 item" href="https://github.com/Bubbablack/vacine">project docs</a>
+
+        </div>
+
       </div>
         <script>
+            function on() {
+              document.getElementById("overlay").style.display = "block";
+            }
+
+            function off() {
+              document.getElementById("overlay").style.display = "none";
+            }
             // Set the date we're counting down to
             var dadate = '{{ EndDate }}'
             var countDownDate = new Date(dadate + " 15:37:25").getTime();
@@ -42,12 +77,15 @@
               var days = Math.floor(distance / (1000 * 60 * 60 * 24));
               var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
               var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+              var seconds =  Math.floor((distance % (1000 * 60)) / 1000);
                 
               // Output the result in an element with id="demo"
-              document.getElementById("demo").innerHTML = days +" " + hours +" "+
-               minutes  + " "+ seconds+ " " ;
-                
+              //document.getElementById("demo").innerHTML = ('00' + days).slice(-3) +" " + ('0' + hours).slice(-2) +" "+
+              //('0' + minutes ).slice(-2) + " "+ ('0' +seconds).slice(-2)+ " " ;
+              document.getElementById("days").innerHTML =  ('00' + days).slice(-3) +" ";
+              document.getElementById("hours").innerHTML = ('0' + hours).slice(-2) +" ";
+              document.getElementById("minutes").innerHTML = ('0' + minutes).slice(-2) +" ";
+              document.getElementById("secounds").innerHTML = ('0' + seconds).slice(-2) +" ";
               // If the count down is over, write some text 
               if (distance < 0) {
                 clearInterval(x);

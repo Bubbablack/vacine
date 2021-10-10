@@ -9,8 +9,8 @@ body{
     color:White;
 }
 h1{
-    font-size: 96px;
-    color:white;
+    font-size: 4em;
+    color:rgb(255, 255, 255);
   
 }
 #flag{
@@ -25,14 +25,71 @@ h1{
 .flex2{
 
     display: flex;
-    margin-top: -5em;
-    margin-left:30%;
-    margin-right:24%; 
     justify-content: space-evenly;
 }
+.flex3{
+    display: flex;
+    
+    text-align: center;
+}
 .item{
-    padding: 3px;
+    margin: 3px;
 }
 .group{
     margin-top:10%;
 }
+.btn {
+    background-color: #d8d8d8; 
+    border:2px solid  #d8d8d8;
+    border-radius:2em;
+    color: black;
+    padding: .5em 1.5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.7em;
+    margin-left: 40%;
+  }
+  .btn2 {
+    background-color:50, 168, 82,0;
+    border:2px solid  #d8d8d8;
+    border-radius:2em;
+    color: #d8d8d8;
+    padding: .5em 1.5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.7em;
+  }
+  #overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  #text{
+    position: absolute;
+    width: 10em;
+    top: 50%;
+    left: 50%;
+    font-size: 2em;
+    color: rgb(233, 233, 233);
+
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+  }
+
+  .info-bar{
+    background-color: white;
+  
+    padding: 3rem;
+    border-radius:1rem
+  }
